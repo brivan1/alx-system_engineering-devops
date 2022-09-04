@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -u /0x00-shell_basics/*.html  /alx-system_engineering-devops 
+cp -i /0x00-shell_basics/*.html .html2 .html3 /alx-system_engineering-devops  
