@@ -12,4 +12,4 @@ echo 'Hello World'!| sudo tee /var/www/html/index.html
 #testing nginx config
 sudo nginx -t
 
-sudo service nginx restart
+sudo service nginx start
