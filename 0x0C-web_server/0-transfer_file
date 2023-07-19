@@ -2,6 +2,7 @@
 # A Bash script to transfer file from a client to a server.
 # Display: PATH_TO_FILE to be copied to server, USERNAME path of IP to server
 # scp to transfer file to the user directory
+# Location to be copied on the server and PATH_TO_FILE
 
 if [ $# -lt 4 ]
 	then
