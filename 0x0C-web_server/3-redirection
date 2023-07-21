@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #script that configures you nginx server so that /redirect_me redirects to another page
-# the redirection is configured as "301 moved permanently"
+#script shows the redirection is configured as "301 moved permanently"
 
 sudo apt-get update
 sudo apt-get install nginx
