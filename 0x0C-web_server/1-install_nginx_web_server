@@ -13,6 +13,6 @@ echo 'Hello World'!| sudo tee /var/www/html/index.html
 sudo nginx -t
 
 # script that configures a new Ubuntu machine to respect above requirements
-sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/github.com
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/welcome.html
 
 sudo service nginx restart
