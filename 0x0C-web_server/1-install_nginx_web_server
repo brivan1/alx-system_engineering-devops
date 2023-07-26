@@ -7,12 +7,9 @@ sudo apt-get update
 sudo apt-get install nginx
 sudo ufw allow 'nginx HTTP'
 
-echo 'Hello World'!| sudo tee /var/www/html/index.html
+echo 'Hello World!' | sudo tee /var/www/html/index.html
 
 #testing nginx config
 sudo nginx -t
-
-# script that configures a new Ubuntu machine to respect above requirements
-sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/welcome.com
 
 sudo service nginx restart
