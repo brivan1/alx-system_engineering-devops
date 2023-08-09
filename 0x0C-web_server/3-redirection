@@ -7,10 +7,10 @@ apt-get install -y nginx
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-location="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/brivan1 permanent;"
+rewrite ^\/redirect_me https:\/\/github.com\/brivan1 permanent;
 
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-availble/welcome.com
 
-sudo sed -i "s/server_name _;/$location/" /etc/nginx/sites-enabled/default
+sudo sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
