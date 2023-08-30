@@ -17,8 +17,8 @@ frontend brivan.front
 
 backend brivan.backbencher
        balance roundrobin
-       server 130215-web-01 100.25.160.80 
-       server 130215-web-02 100.25.138.154
+       server 130215-web-01 100.24.253.196 
+       server 130215-web-02 54.234.69.207
 "
 
 echo "$server_config" | sudo tee /etc/haproxy/haproxy.cfg
