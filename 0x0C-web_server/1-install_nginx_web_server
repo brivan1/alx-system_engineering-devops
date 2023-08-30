@@ -8,9 +8,15 @@ sudo apt-get install nginx
 sudo ufw allow 'nginx HTTP'
 
 echo 'Hello World!' | sudo tee /var/www/html/index.html
+
 #config a new ubuntu machine
-sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.no
-two
+sudo mkdir -p /var/www/default2.bck/html
+
+sudo cp /var/www/html/index.nginx-debian.html /var/www/default2.bck/html/
+
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default2.bck
+
+sudo ln -s /etc/nginx/sites-available/default2.bck /etc/nginx/sites-enabled/
 
 #testing nginx config
 sudo nginx -t
