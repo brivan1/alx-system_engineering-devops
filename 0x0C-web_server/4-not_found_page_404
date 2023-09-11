@@ -6,14 +6,14 @@ apt-get install -y nginx
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-location="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/brivan1 permanent;"
+string_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/brivan1 permanent;"
 
-sudo sed -i "s/server_name _;/$location/" /etc/nginx/sites-enabled
+sudo sed -i "s/server_name _;/$string_replacement/" /etc/nginx/sites-enabled
 #creating a 404 error page
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
-location="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\troot \/var/www/html;\n\t\tinternal;\n\t}"
+string_replace="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\troot \/var/www/html;\n\t\tinternal;\n\t}"
 
-sudo sed -i "s/listen 80 default_server;/$location/" /etc/nginx/sites-enabled/default
+sudo sed -i "s/listen 80 default_server;/$replace/" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
