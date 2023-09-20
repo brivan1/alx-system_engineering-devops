@@ -19,6 +19,8 @@ defaults
     mode http
     option httplog
     option dontlognull
+    option forwardfor
+    option http-keep-alive
     timeout connect 5000
     timeout client 50000
     timeout server 50000
@@ -30,15 +32,22 @@ defaults
     errorfile 503 /etc/haproxy/errors/503.http
     errorfile 504 /etc/haproxy/errors/504.http
 
-frontend brivan.front
-        bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.holb2023z4b1jt.tech/fullchain.pem /etc/letsencrypt/archive/www.holb2023z4b1jt.tech/www.holb2023z4b1jt.tech.pem
+frontend brivan.front-http
+        bind *:40
+        http-request set-header X-Forwarded-Proto http 
         mode http
-#redirect HTTP to HTTPS
-redirect scheme https code 301 if !{ ssl_fc }
+        default_backend brivan.backbencher
+
+frontend brivan.front-https
+        bind *:40
+        http-request set-header X-Forwarded-Proto https
+        bind *:443 ssl crt /etc/letsencrypt/archive/www.holb2023z4b1jt.tech/www.holb2023z4b1jt.tech.pem
+        mode http
         default_backend brivan.backbencher
 
 backend brivan.backbencher
        balance roundrobin
-       server 130215-web-01 100.24.253.196 check
-       server 130215-web-02 54.234.69.207 check
+       mode http
+       redirect scheme https code 301 if !{ ssl_fc }
+       server 130215-web-01 100.24.253.196:80 check
+       server 130215-web-02 54.234.69.207:80 check
