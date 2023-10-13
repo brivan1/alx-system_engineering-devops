@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-#script to configure apache server
-
-sed -i "ServerName;/a Servername $HOSTNAME; /etc/apache2/sites-available/000.default.conf"
