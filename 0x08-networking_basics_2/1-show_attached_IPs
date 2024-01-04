@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# a script that displays all active IPv4 on the machine it's executed on
+
+ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | while read -r ipaddr; do
+    if ping -c1 -w1 "$ipaddr" &>/dev/null; then
+	echo "$ipaddr"
+    fi
+done
