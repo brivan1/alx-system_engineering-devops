@@ -1,10 +1,28 @@
 For this project, we expect you to look at these concepts:
 
 [DNS](https://intranet.alxswe.com/concepts/12)
+ [Learn everything about DNS in cartoon](https://howdns.works/)
+Be sure to know the main DNS record types:
+ [A](https://support.dnsimple.com/articles/a-record/)
+ [CNAME](https://en.wikipedia.org/wiki/CNAME_record)
+ [MX](https://en.wikipedia.org/wiki/MX_record)
+ [TXT](https://en.wikipedia.org/wiki/TXT_record)
+Advanced
+ [Use DNS to scale with round-robin DNS](https://www.dnsknowledge.com/whatis/round-robin-dns/)
+ [What’s an NS Record?](https://support.dnsimple.com/articles/ns-record/)
+ [What’s an SOA Record?](https://support.dnsimple.com/articles/soa-record/)
 [Monitoring](https://intranet.alxswe.com/concepts/13)
 [Web Server](https://intranet.alxswe.com/concepts/17)
+ [web server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server)
+ [what is a web server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server)
 [Network basics](https://intranet.alxswe.com/concepts/33)
+ [What is a protocol](https://www.techtarget.com/searchnetworking/definition/protocol)
+ [what is an IP address](https://computer.howstuffworks.com/internet/basics/what-is-an-ip-address.htm)
+ [What is TCP/IP](https://www.avast.com/c-what-is-tcp-ip#)
+ [What is an Internet Protocol (IP) port?](https://www.lifewire.com/port-numbers-on-computer-networks-817939)
 [Load balancer](https://intranet.alxswe.com/concepts/46)
+ [load-balancing](https://www.thegeekstuff.com/2016/01/load-balancer-intro/)
+ [load-balancing algorithms](https://community.f5.com/kb/technicalarticles/intro-to-load-balancing-for-developers-%E2%80%93-the-algorithms/273759)
 [Server](https://intranet.alxswe.com/concepts/67)
 
 Read or watch:
