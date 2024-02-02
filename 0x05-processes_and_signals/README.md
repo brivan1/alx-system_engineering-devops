@@ -1,10 +1,10 @@
 Resources
 Read or watch:
 
-Linux PID
-Linux process
-Linux signal
-Process management in linux
+[Linux PID](https://www.linfo.org/pid.html)
+[Linux process](https://www.thegeekstuff.com/2012/03/linux-processes-environment/)
+[Linux signal](https://www.educative.io/answers/what-are-linux-signals)
+[Process management in linux](https://www.digitalocean.com/community/tutorials/process-management-in-linux)
 man or help:
 
 ps
