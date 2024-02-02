@@ -1,11 +1,11 @@
 Resources
 Read or watch:
 
-Loops sample
-Variable assignment and arithmetic
-Comparison operators
-File test operators
-Make your scripts portable
+[Loops sample](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html)
+[Variable assignment and arithmetic](https://tldp.org/LDP/abs/html/ops.html)
+[Comparison operators](https://tldp.org/LDP/abs/html/comparison-ops.html)
+[File test operators](https://tldp.org/LDP/abs/html/fto.html)
+[Make your scripts portable](https://www.cyberciti.biz/tips/finding-bash-perl-python-portably-using-env.html)
 man or help:
 
 env
@@ -41,7 +41,7 @@ You will not be able to meet the objectives of this or any following project by 
 You are not allowed to publish any content of this project.
 Any form of plagiarism is strictly forbidden and will result in removal from the program.
 More Info
-Shellcheck
+[Shellcheck](https://github.com/koalaman/shellcheck)
 Shellcheck is a tool that will help you write proper Bash scripts. It will make recommendations on your syntax and semantics and provide advice on edge cases that you might not have thought about. Shellcheck is your friend! All your Bash scripts must pass Shellcheck without any error or you will not get any points on the task.
 
 Shellcheck is available on the school’s computers. If you want to use it on your own computer, here is how to install it.
@@ -64,7 +64,7 @@ mandatory
 Read for this task:
 
 Linux and Mac OS users
-Windows users
+[Windows users](https://docs.rackspace.com/docs/generating-rsa-keys-with-ssh-puttygen)
 man: ssh-keygen
 
 You will soon have to manage your own servers concept page hosted on remote data centers. We need to set them up with your RSA public key so that you can access them via SSH.
@@ -566,8 +566,8 @@ File: 100-read_and_cut
 
 Read:
 
-IFS (internal field separator)
-Understanding /etc/passwd
+[IFS (internal field separator)](https://tldp.org/LDP/abs/html/internalvariables.html)
+[Understanding /etc/passwd](https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/)
 The file /etc/passwd has already been covered in a previous project and you should be familiar with it. Today we will make up a story based on it.
 
 Write a Bash script that displays the content of the file /etc/passwd, using the while loop + IFS.
@@ -618,13 +618,13 @@ File: 101-tell_the_story_of_passwd
 #advanced
 
 
-Apache is among the most popular web servers in the world, serving 50% of all active websites, no doubt that you will have to interact with it within your career.
+[Apache](https://en.wikipedia.org/wiki/Apache_HTTP_Server) is among the most popular web servers in the world, serving 50% of all active websites, no doubt that you will have to interact with it within your career.
 
 As a Full-Stack Software Engineer, you have to master the art of parsing log files. Today we will do a simple parsing of Apache log access files.
 
 Today the Customer Support department reported that a user reported that the site is being “buggy”. Not being a detailed description, you want to have a look at the Apache logs and gather data about the traffic.
 
-Write a Bash script that displays the visitor IP along with the HTTP status code from the Apache log file.
+Write a Bash script that displays the visitor IP along with the [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) from the Apache log file.
 
 Requirement:
 
