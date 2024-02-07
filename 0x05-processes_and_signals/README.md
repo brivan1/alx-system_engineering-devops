@@ -379,10 +379,10 @@ File: 100-process_and_pid_file
 
 Read:
 
-&
-init.d
-Daemon
-Positional parameters
+[&](https://bashitout.com/2013/05/18/Ampersands-on-the-command-line.html)
+[init.d](https://www.ghacks.net/2009/04/04/get-to-know-linux-the-etcinitd-directory/)
+[Daemon](https://en.wikipedia.org/wiki/Daemon_%28computing%29)
+[Positional parameters](https://www.gnu.org/software/bash/manual/html_node/Positional-Parameters.html)
 man: sudo
 
 Programs that are detached from the terminal and running in the background are called daemons or processes, need to be managed. The general minimum set of instructions is: start, restart and stop. The most popular way of doing so on Unix system is to use the init scripts.
@@ -452,7 +452,7 @@ File: 101-manage_my_process, manage_my_process
 #advanced
 
 
-Read what a zombie process is.
+Read [what a zombie process is](https://zombieprocess.wordpress.com/what-is-a-zombie-process/)
 
 Write a C program that creates 5 zombie processes.
 
