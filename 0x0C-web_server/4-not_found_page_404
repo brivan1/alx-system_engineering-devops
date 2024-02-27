@@ -17,7 +17,7 @@ echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
 error_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\troot \/var/www/html;\n\t\tinternal;\n\t}"
 
-sudo sed -i "s/listen 80 default_server;/$error_string/" /etc/nginx/sites-enabled/default
+sudo sed -i "s/listen 80 default_server;/$error_string/" /etc/nginx/sites-available/default
 
 #testing nginx config
 sudo nginx -t
