@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#creating a 404 error page
+
+sudo apt-get update
+sudo apt-get install nginx
+
+echo 'Hello World!' > /var/www/html/index.html
+
+#allowing nginx on firewall
+sudo ufw allow 'nginx HTTP'
+
+#redirection
+sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/brivan1 permanent;/" /etc/nginx/sites-available/default
+
+#creating a 404 page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+error_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+
+sudo sed -i "s/listen 80 default_server;/$error_string/" /etc/nginx/sites-enabled/default
+
+#testing nginx config
+sudo nginx -t
+
+sudo service nginx restart
