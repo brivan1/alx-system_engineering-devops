@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#s script installs nginx on web 01
+
+sudo apt-get update
+sudo apt-get install nginx
+
+echo 'Hello World!' > /var/www/html/index.html
+
+#allowing nginx on firewall
+sudo ufw allow 'nginx HTTP'
+
+#redirection
+sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/brivan1 permanent;/" /etc/nginx/sites-available/default
+
+#testing nginx config
+sudo nginx -t
+
+sudo service nginx restart
