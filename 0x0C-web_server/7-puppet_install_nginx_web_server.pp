@@ -1,23 +1,21 @@
-# Script to install nginx using puppet
+#automating using Puppet
 
-package {'nginx':
+package { 'nginx':
+  ensure => installed,
+}
+
+file_line { 'install':
   ensure => 'present',
+  path   => '/etc/nginx/sites-enabled/default',
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.github.com/brivan1 permanent;',
 }
 
-exec {'install':
-  command  => 'sudo apt-get update ; sudo apt-get -y install nginx',
-  provider => shell,
-
+file { '/var/www/html/index.html':
+  content => 'Hello World!',
 }
 
-exec {'Hello':
-  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
-  provider => shell,
+service { 'nginx':
+  ensure => running,
+  require => package['nginx'],
 }
-
-exec {'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/github.com\/brivan1\/;\\n\\t}/" /etc/nginx/sites-available/default':provider => shell,
-}
-
-exec {'run':
-  command  => 'sudo service nginx restart',
-  provider => shell,
