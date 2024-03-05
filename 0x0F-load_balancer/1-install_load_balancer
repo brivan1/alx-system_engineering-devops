@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+#install and configure HAProxy on lb-01 server
+
+sudo apt-get -y update
+
+sudo apt-get -y install haproxy
+
+# edit the config file
+
+server_config=\
+"
+frontend brivan.front
+        bind *:80
+        mode http
+        default_backend brivan.backbencher
+
+backend brivan.backbencher
+       balance roundrobin
+       server 130215-web-01 100.24.253.196 
+       server 130215-web-02 54.234.69.207
+"
+
+echo "$server_config" | sudo tee /etc/haproxy/haproxy.cfg
+
+#enable HAProxy to be started by init script
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+sudo service haproxy restart
