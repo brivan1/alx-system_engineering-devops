@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#configure Nginx so that its HTTP response contains a custom header(on web-01 and web-02)
+#name of the custom HTTP must be X-Served-By
+#value of custom HTTP header must be the hostname of the server nginx is running on
+#
+#nginx installation
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+#create an index page
+
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+
+#redirection
+sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/brivan1 permanent;/" /etc/nginx/sites-available/default
+
+#creating a 404 page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+# creating a custom HTTP response header
+
+sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+
+#test for config errors
+sudo nginx -t
+
+#restart nginx
+
+sudo service nginx restart
