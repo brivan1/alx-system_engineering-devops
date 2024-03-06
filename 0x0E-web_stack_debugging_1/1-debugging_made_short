@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#script to debug nginx (service (init)to say nginx is not running
+
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+
+service nginx restart
+
+pkill -o nginx
