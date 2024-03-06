@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
+#a script to install and configure haproxy as a loadbalancer on  lb-01 server
 
-#a script to install and configure HAProxy as a load balancer
 
 sudo apt-get -y update
 
