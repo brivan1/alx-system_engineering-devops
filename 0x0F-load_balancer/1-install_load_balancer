@@ -10,9 +10,14 @@ sudo apt-get -y install haproxy
 
 server_config=\
 "
+defaults
+   mode http
+   timeout client 10000ms
+   timeout connect 3000ms
+   timeout server 10000ms
+
 frontend brivan.front
         bind *:80
-        mode http
         default_backend brivan.backbencher
 
 backend brivan.backbencher
@@ -22,6 +27,9 @@ backend brivan.backbencher
 "
 
 echo "$server_config" | sudo tee /etc/haproxy/haproxy.cfg
+
+#test haproxy configuration
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 
 #enable HAProxy to be started by init script
 
