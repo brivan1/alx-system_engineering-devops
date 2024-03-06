@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 #a script to install and configure haproxy as a loadbalancer on  lb-01 server
+#configure HAProxy to send traffic to web-01 and web-02 servers
+#distribute requests using a roundrobin algorithm
+#make sure that HAProxy can  be managed via an init  script
 
 
+#install and configure haproxy on lb-01 server
 sudo apt-get -y update
 
 sudo apt-get -y install haproxy
