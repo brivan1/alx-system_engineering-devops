@@ -33,7 +33,6 @@ frontend brivan.front
         default_backend brivan.back
 
 frontend brivan.front-https
-        bind *:40
         http-request set-header X-Forwarded-Proto https
         bind *:443 ssl crt /etc/letsencrypt/archive//www.holb2023z4b1jt.tech/www.holb2023z4b1jt.tech.pem
         mode http
@@ -42,5 +41,5 @@ frontend brivan.front-https
 backend brivan.back
        balance roundrobin
        redirect scheme https code 301 if !{ ssl_fc }
-       server 130215-web-01 100.25.204.217
-       server 130215-web-02 34.227.94.234
+       server 130215-web-01 100.25.204.217:80 check
+       server 130215-web-02 34.227.94.234:80 check
